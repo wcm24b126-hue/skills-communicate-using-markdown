@@ -1,0 +1,30 @@
+# 📓 Dev Diary: Day 6 - Getting My Hands Dirty in Linux & The SDLC
+
+## Day 6: The Manual Deployment Simulation
+**Mood:** Feeling like a real engineer 🛠️
+
+Today was a massive shift. I stopped just reading about DevOps and actually jumped into the terminal. NotebookLM has been an incredible mentor (that "Master Prompt" configuration is a game-changer for keeping me focused on TechWorld with Nana's curriculum), but it was time to put the theory into practice.
+
+I fired up Oracle VirtualBox, booted into my Linux VM, and tackled **Level 1: DevOps Prerequisites**. 
+
+**What I accomplished today:**
+* Configured my NotebookLM "Brain" with the Senior DevOps Engineer persona to enforce strict learning and prevent tutorial hell.
+* Completed my first terminal micro-task: setting up my `devops-journey` master directory.
+* Executed a full "Manual" Software Development Lifecycle (SDLC) deployment to understand *why* we actually need DevOps tools like Jenkins or Docker later on.
+
+
+
+[Image of Software Development Lifecycle SDLC]
+
+
+### The Aha Moment: The Restaurant Analogy 🍽️
+The biggest takeaway today was understanding the manual friction between Developers and Operations. The analogy of the Chef (Dev) leaving a plate on the counter for the Waiter (Ops) clicked perfectly. 
+
+I acted out all three roles in the terminal to simulate this manual hand-off:
+
+**1. The Developer (Writing Code):**
+I created a simple web app folder and wrote an `index.html` file to act as my source code.
+```bash
+mkdir my-web-app
+cd my-web-app
+echo "<h1>Hello DevOps World</h1>" > index.html
