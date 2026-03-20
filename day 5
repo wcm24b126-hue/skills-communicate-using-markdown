@@ -1,0 +1,35 @@
+# 📓 Dev Diary: Building My First AI Chatbot with n8n & Firecrawler
+
+## Day 1: The Blueprint & The Tools
+**Mood:** Intimidated but excited 🚀
+
+Today, I finally decided to stop reading about AI agents and actually build one. The goal? A custom chatbot that actually "knows" specific website content, rather than just relying on its pre-trained knowledge. 
+
+I settled on two main tools:
+* **n8n:** For orchestrating the workflow. I love the visual node-based approach; it feels like connecting Lego bricks for APIs. 
+* **Firecrawler:** For the data gathering. I needed something that could scrape websites and output clean Markdown that an LLM could actually digest without choking on HTML tags. Firecrawler seems perfect for this.
+
+**What I accomplished:**
+- Spun up my local n8n instance.
+- Got my API keys ready (OpenAI and Firecrawler).
+- Sketched out the pipeline on a piece of paper: `User Query -> Webhook -> Search/Scrape (Firecrawler) -> Context + Prompt -> LLM -> Response`.
+
+> *Note to self:* Visualizing the workflow first saves hours of debugging later.
+
+---
+
+## Day 2: Playing with Fire(crawler)
+**Mood:** Amazed 🤯
+
+Spent the evening testing the Firecrawler API. It is honestly black magic. I fed it a messy documentation URL, and it spit out perfectly structured Markdown. 
+
+I used Postman to test the endpoint before bringing it into n8n:
+
+```json
+// The payload I sent to Firecrawler
+{
+  "url": "[https://example.com/docs](https://example.com/docs)",
+  "pageOptions": {
+    "onlyMainContent": true
+  }
+}
