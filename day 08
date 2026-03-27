@@ -1,0 +1,44 @@
+ Gemini said
+
+This is a great milestone! Day 08 of the vProfile project usually focuses on Automated Provisioning using Vagrant and Shell scripting. Based on our conversation and the errors we just solved, here is a professional and detailed description you can use for your GitHub journal.
+📝 GitHub Journal: Day 08 - Automated Stack Provisioning
+Project Overview
+
+Today’s objective was to automate the setup of a multi-tier Java application stack (vProfile) using Vagrant and Bash Scripts. Instead of manually configuring each server, I used infrastructure-as-code principles to deploy five distinct virtual machines.
+Infrastructure Architecture
+
+I provisioned the following environment:
+
+    Database (db01): MariaDB on CentOS Stream 9.
+
+    Memcached (mc01): Distributed memory caching system on CentOS Stream 9.
+
+    RabbitMQ (rmq01): Message broker for asynchronous tasks on CentOS Stream 9.
+
+    Application Server (app01): Apache Tomcat for running the Java application.
+
+    Web Server (web01): Nginx acting as a Reverse Proxy on Ubuntu 22.04.
+
+Key Tasks & Challenges
+
+    Multi-VM Configuration: Configured a complex Vagrantfile to handle different Operating Systems (CentOS and Ubuntu) and private networking.
+
+    Automated Scripting: Wrote and executed shell scripts to automate the installation of MariaDB, Nginx, and system dependencies.
+
+    Network Troubleshooting: Encountered a common issue where the OS renamed the network interface to enp0s8 instead of eth1. I successfully debugged this using ip addr to identify the correct private IP (192.168.56.11).
+
+    Resource Management: Managed host RAM and CPU limits to ensure 5 VMs could boot simultaneously without crashing the hypervisor.
+
+Commands Used
+
+    vagrant up: To trigger the automated build.
+
+    vagrant ssh [vm_name]: To log in and verify services.
+
+    ip addr show: To confirm private network IP assignments.
+
+    systemctl status [service]: To ensure Nginx and MariaDB were running correctly.
+
+Outcome
+
+The environment is fully reachable. The Nginx server is successfully listening on the private network, and the database has been initialized with the project schema.
