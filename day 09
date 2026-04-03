@@ -1,0 +1,35 @@
+# 📖 Development Journal
+
+## Date: April 3, 2026
+**Author:** Ashan Dhanushka  
+**Project:** UNIVOTEC Bank - Core Banking Transaction System  
+**Phase:** Full-Stack Integration & Environment Hardening  
+
+### 🎯 Objective for the Day
+Establish a secure, end-to-end connection between the React frontend, the Spring Boot application tier, and the SQL Server database. Overcome environment-specific network and authentication bottlenecks to execute a complete transaction lifecycle.
+
+### 🛠️ Technical Hurdles Overcome
+1. **Database Network Configuration (TCP/IP Fix):** - *Issue:* Spring Boot's Hibernate/JDBC driver threw `JDBCConnectionException` because SQL Server Express does not listen on network ports by default.
+   - *Resolution:* Bypassed Windows Search limitations to locate `SQLServerManager16.msc` in `SysWOW64`. Manually enabled TCP/IP protocols and bound the `IPAll` configuration to the standard enterprise port `1433`. Restarted the database engine to establish the network pipe.
+
+2. **Database Authentication Hardening:**
+   - *Issue:* SQL Server rejected the `BankManager` credentials with Error `18456` (Login failed).
+   - *Resolution:* Reconfigured the SQL Server instance from "Windows Authentication Only" to "Mixed Mode Authentication." Verified the `BankManager` login status, reset the credentials, and granted the role `db_owner` to allow execution of custom stored procedures (`sp_Deposit`, `sp_Withdraw`, `sp_Transfer`).
+
+3. **Frontend Architecture Optimization (Celeron Optimization):**
+   - *Decision:* Standard `npm` and Webpack setups were deemed too resource-heavy for the current development machine.
+   - *Implementation:* Pivoted to using **Vite** coupled with **pnpm** (Performant NPM). This drastically reduced module installation time and memory overhead.
+   - *Styling Upgrade:* Integrated the newly released **Tailwind CSS v4**, utilizing the streamlined `@tailwindcss/vite` plugin and bypassing legacy PostCSS configurations for a faster build pipeline.
+
+4. **API Controller Alignment (CORS & Endpoints):**
+   - *Implementation:* Configured `@CrossOrigin(origins = "*")` on the `BankController` to permit the React UI to consume the REST API safely. Upgraded endpoint mappings (`@PostMapping`) to ensure robust data handling for Deposits, Withdrawals, and Transfers.
+
+### ✅ Verification & Milestones Reached
+- Successfully executed the first end-to-end full-stack transaction.
+- Transmitted a 5000 LKR "Web Portal Deposit" payload from the React UI (`http://localhost:5173`).
+- Payload was intercepted by Spring Boot (`http://localhost:8080`), passed to the `AccountRepository`, and executed via the `sp_Deposit` stored procedure.
+- **Data Integrity Verified:** Queried the `Transactions` table directly via SSMS and confirmed the transaction was permanently committed with accurate timestamping and updated account balances.
+
+### 🚀 Next Steps
+- Finalize the UI state management for edge cases (e.g., insufficient funds during withdrawal).
+- Prepare the repository for the final B.Tech project submission.
