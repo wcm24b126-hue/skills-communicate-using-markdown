@@ -1,0 +1,50 @@
+Day 10: Development, Theory & Tool Research
+
+Date: April 10, 2026
+1. Project: Banking Application Development
+
+Spent the majority of the day refining the Industrial-Standard Banking Pipeline. Key tasks included:
+
+    Database Management: Utilized Beekeeper Studio for database visualization and management.
+
+    Troubleshooting: Debugged environment setup issues and verified database connectivity for the backend.
+
+    Mobile Refactoring: Collaborated with AI agents to refactor code for the Expo-based mobile application, ensuring clean architecture and performance.
+
+2. Design-to-Code Research: Export Kit
+
+Explored Export Kit as a potential bridge between Figma and development:
+
+    Capabilities: Evaluated its ability to convert Figma layers into production-ready HTML, CSS, and Mobile (Android/iOS) code.
+
+    Relevance: Assessed how it handles "Pixel-Perfect" conversion and dynamic layouts for high-fidelity UI.
+
+    Alternative Tools: Briefly compared it with Locofy.ai and Anima specifically for React Native/Expo workflows to find the best fit for the banking app's UI.
+
+3. Technical Theory & Systems
+
+    Memory Allocation Study: Analyzed how routines manage space to prevent memory from filling up with unused data.
+
+    Concepts Covered:
+
+        Static vs. Dynamic Allocation: How fixed reservation leads to "holes" in RAM.
+
+        Internal Fragmentation: Why unused blocks are left behind in fixed partitioning.
+
+        Dead Code: The impact of unreachable instructions on the total memory footprint.
+
+4. Professional & Academic Growth
+
+    IEEE ComSoc Membership: Researched the Communications Society membership discount, benefits, and registration steps to support ongoing research in digital acceleration.
+
+Tools & Technologies Used
+
+    Frontend: Expo (React Native), Figma
+
+    Database: Beekeeper Studio, PostgreSQL/Supabase
+
+    Research: Export Kit, IEEE Membership Portal
+
+    AI Collaboration: Gemini AI / Antigravity Agent
+
+    Status: Focused on infrastructure and UI-to-code efficiency. Mobile refactoring is in progress.
