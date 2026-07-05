@@ -1,0 +1,45 @@
+
+
+### File Content Preview:
+
+```markdown
+# Portfolio Project Update: Microsoft Clarity Integration
+
+## Overview
+Today, I successfully integrated **Microsoft Clarity** into my live portfolio website. This analytics tool has been set up to track, capture, and visualize user behavior, including click heatmaps, scroll depths, and complete session recordings.
+
+> 📝 **Important Note on Historical Data:** Because tracking scripts only record live traffic, data collection begins **from today onwards**. Visitor interactions from the previous 3 months that the portfolio was online will not be retroactively reflected on the Clarity dashboard.
+
+---
+
+## 🛠️ Summary of Changes
+
+### 1. Script Injection
+Added the official Microsoft Clarity tracking script into the `<head>` tag of the portfolio's main HTML layout. The script initializes asynchronously to ensure that it tracks user analytics without blocking the website's initial loading speed or performance.
+
+### 2. Feature Deployment
+By deploying this integration, the portfolio now captures:
+* **Session Recordings:** Playbacks of user navigation to identify friction points and layout bugs.
+* **Heatmaps:** Visual click maps and scroll tracking to discover which projects or sections draw the most attention.
+* **Rage Clicks & Dead Clicks:** Smart filters to catch broken links or frustrating UI elements.
+
+---
+
+## 🚀 Testing & Verification
+
+To verify that the tracking code was successfully configured and operational, the following checks were performed:
+
+1.  **Console Verification:** Opened the portfolio in an isolated environment and confirmed that the network tab successfully fires requests to Microsoft Clarity servers (`clarity.ms`) without generating console errors.
+2.  **Dashboard Latency Check:** Acknowledged the normal processing buffer. Real-time metrics and session playbacks typically take anywhere from **30 minutes to 2 hours** to process and appear on the Clarity dashboard after a user terminates a session.
+
+---
+
+## 💻 Git Commit Message Quick Reference
+For version control logging, the following standard commit message formatting was utilized:
+
+```text
+feat: integrate Microsoft Clarity analytics tracking
+
+- Added Microsoft Clarity asynchronous tracking snippet to the layout head
+- Enabled session recordings, click heatmaps, and rage-click tracking
+- Confirmed zero console errors or blocking scripts during initial render
