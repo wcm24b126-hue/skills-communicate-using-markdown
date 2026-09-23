@@ -1,0 +1,18 @@
+into localstack
+
+
+  create a full erp system with eof method and create the system using the cli
+
+  install docker
+  install awscli
+  install localstack
+
+
+  run docker,aws,lkstk
+
+    and create the system 
+    use the opencode to analyze the project and create a full terraform code to create the full production level architecture
+    get the master prompt using gemini or claude and run on hte cloud service cli terminal 
+    bam it works.....
+
+    
